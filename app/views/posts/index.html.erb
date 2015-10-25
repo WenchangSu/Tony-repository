@@ -1,7 +1,6 @@
 <h1>My Blog</h1>
-
 <%@posts.each do |post|%>
 <h2><%=post.titie%></h2>
 <p><%=post.content%></p>
-	<small><%= post.created_at%></samll>
+<small><%= post.created_at%></samll>
 <%end%>
