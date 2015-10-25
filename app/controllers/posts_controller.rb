@@ -12,8 +12,17 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-	def creat
+	def create
+		#@post = Post.new(params[:post])<-this ia a old veirson
+		@post = Post.new(params.require(:post).permit(:titie,:content))
+		if @post.save
+			redirect_to posts_path, :noice=>"Successfully created!"
+		else 
+			render "new"
+		end
 	end
+
+	
 
 	def edit
 	end
